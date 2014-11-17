@@ -39,10 +39,10 @@ public class DemoParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getRecurseAccess().getAlternatives_1(), "rule__Recurse__Alternatives_1");
 					put(grammarAccess.getRecurseAccess().getGroup(), "rule__Recurse__Group__0");
-					put(grammarAccess.getRecurseAccess().getGroup_1_4(), "rule__Recurse__Group_1_4__0");
+					put(grammarAccess.getRecurseAccess().getGroup_1_1(), "rule__Recurse__Group_1_1__0");
 					put(grammarAccess.getModelAccess().getContentsAssignment(), "rule__Model__ContentsAssignment");
 					put(grammarAccess.getRecurseAccess().getNAssignment_1_0(), "rule__Recurse__NAssignment_1_0");
-					put(grammarAccess.getRecurseAccess().getRAssignment_1_4_1(), "rule__Recurse__RAssignment_1_4_1");
+					put(grammarAccess.getRecurseAccess().getRAssignment_1_1_1(), "rule__Recurse__RAssignment_1_1_1");
 				}
 			};
 		}

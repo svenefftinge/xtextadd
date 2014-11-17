@@ -86,16 +86,23 @@ finally {
 
 // Entry rule entryRuleRecurse
 entryRuleRecurse 
+@init {
+	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_SL_COMMENT", "RULE_LINECONTINUATION");
+}
 :
 { before(grammarAccess.getRecurseRule()); }
 	 ruleRecurse
 { after(grammarAccess.getRecurseRule()); } 
 	 EOF 
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule Recurse
 ruleRecurse
     @init {
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_SL_COMMENT", "RULE_LINECONTINUATION");
 		int stackSize = keepStackSize();
     }
 	:
@@ -108,6 +115,7 @@ ruleRecurse
 ;
 finally {
 	restoreStackSize(stackSize);
+	myHiddenTokenState.restore();
 }
 
 
@@ -125,27 +133,9 @@ rule__Recurse__Alternatives_1
 )
 
     |(
-{ before(grammarAccess.getRecurseAccess().getWSTerminalRuleCall_1_1()); }
-	RULE_WS
-{ after(grammarAccess.getRecurseAccess().getWSTerminalRuleCall_1_1()); }
-)
-
-    |(
-{ before(grammarAccess.getRecurseAccess().getSL_COMMENTTerminalRuleCall_1_2()); }
-	RULE_SL_COMMENT
-{ after(grammarAccess.getRecurseAccess().getSL_COMMENTTerminalRuleCall_1_2()); }
-)
-
-    |(
-{ before(grammarAccess.getRecurseAccess().getLINECONTINUATIONTerminalRuleCall_1_3()); }
-	RULE_LINECONTINUATION
-{ after(grammarAccess.getRecurseAccess().getLINECONTINUATIONTerminalRuleCall_1_3()); }
-)
-
-    |(
-{ before(grammarAccess.getRecurseAccess().getGroup_1_4()); }
-(rule__Recurse__Group_1_4__0)
-{ after(grammarAccess.getRecurseAccess().getGroup_1_4()); }
+{ before(grammarAccess.getRecurseAccess().getGroup_1_1()); }
+(rule__Recurse__Group_1_1__0)
+{ after(grammarAccess.getRecurseAccess().getGroup_1_1()); }
 )
 
 ;
@@ -225,27 +215,27 @@ finally {
 
 
 
-rule__Recurse__Group_1_4__0
+rule__Recurse__Group_1_1__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__Recurse__Group_1_4__0__Impl
-	rule__Recurse__Group_1_4__1
+	rule__Recurse__Group_1_1__0__Impl
+	rule__Recurse__Group_1_1__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Recurse__Group_1_4__0__Impl
+rule__Recurse__Group_1_1__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_4_0()); }
+{ before(grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_1_0()); }
 	RULE_BEGIN
-{ after(grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_4_0()); }
+{ after(grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_1_0()); }
 )
 
 ;
@@ -254,27 +244,27 @@ finally {
 }
 
 
-rule__Recurse__Group_1_4__1
+rule__Recurse__Group_1_1__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__Recurse__Group_1_4__1__Impl
-	rule__Recurse__Group_1_4__2
+	rule__Recurse__Group_1_1__1__Impl
+	rule__Recurse__Group_1_1__2
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Recurse__Group_1_4__1__Impl
+rule__Recurse__Group_1_1__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getRecurseAccess().getRAssignment_1_4_1()); }
-(rule__Recurse__RAssignment_1_4_1)
-{ after(grammarAccess.getRecurseAccess().getRAssignment_1_4_1()); }
+{ before(grammarAccess.getRecurseAccess().getRAssignment_1_1_1()); }
+(rule__Recurse__RAssignment_1_1_1)
+{ after(grammarAccess.getRecurseAccess().getRAssignment_1_1_1()); }
 )
 
 ;
@@ -283,26 +273,26 @@ finally {
 }
 
 
-rule__Recurse__Group_1_4__2
+rule__Recurse__Group_1_1__2
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__Recurse__Group_1_4__2__Impl
+	rule__Recurse__Group_1_1__2__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Recurse__Group_1_4__2__Impl
+rule__Recurse__Group_1_1__2__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_4_2()); }
+{ before(grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_1_2()); }
 	RULE_END
-{ after(grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_4_2()); }
+{ after(grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_1_2()); }
 )
 
 ;
@@ -348,14 +338,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Recurse__RAssignment_1_4_1
+rule__Recurse__RAssignment_1_1_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_4_1_0()); }
-	ruleRecurse{ after(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_4_1_0()); }
+{ before(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_1_1_0()); }
+	ruleRecurse{ after(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_1_1_0()); }
 )
 
 ;
@@ -370,9 +360,9 @@ RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 
-RULE_BEGIN : '{';
+RULE_BEGIN : '{|';
 
-RULE_END : '}';
+RULE_END : '|}';
 
 RULE_LINECONTINUATION : '\\';
 

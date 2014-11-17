@@ -104,16 +104,23 @@ ruleModel returns [EObject current=null]
 
 // Entry rule entryRuleRecurse
 entryRuleRecurse returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_SL_COMMENT", "RULE_LINECONTINUATION");
+	}
 	:
 	{ newCompositeNode(grammarAccess.getRecurseRule()); }
 	 iv_ruleRecurse=ruleRecurse 
 	 { $current=$iv_ruleRecurse.current; } 
 	 EOF 
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 // Rule Recurse
 ruleRecurse returns [EObject current=null] 
     @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_SL_COMMENT", "RULE_LINECONTINUATION");
     }
     @after { leaveRule(); }:
 ((
@@ -141,49 +148,37 @@ ruleRecurse returns [EObject current=null]
 
 )
 )
-    |this_WS_2=RULE_WS
+    |(this_BEGIN_2=RULE_BEGIN
     { 
-    newLeafNode(this_WS_2, grammarAccess.getRecurseAccess().getWSTerminalRuleCall_1_1()); 
-    }
-
-    |this_SL_COMMENT_3=RULE_SL_COMMENT
-    { 
-    newLeafNode(this_SL_COMMENT_3, grammarAccess.getRecurseAccess().getSL_COMMENTTerminalRuleCall_1_2()); 
-    }
-
-    |this_LINECONTINUATION_4=RULE_LINECONTINUATION
-    { 
-    newLeafNode(this_LINECONTINUATION_4, grammarAccess.getRecurseAccess().getLINECONTINUATIONTerminalRuleCall_1_3()); 
-    }
-
-    |(this_BEGIN_5=RULE_BEGIN
-    { 
-    newLeafNode(this_BEGIN_5, grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_4_0()); 
+    newLeafNode(this_BEGIN_2, grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_1_0()); 
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_4_1_0()); 
+	        newCompositeNode(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_1_1_0()); 
 	    }
-		lv_r_6_0=ruleRecurse		{
+		lv_r_3_0=ruleRecurse		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getRecurseRule());
 	        }
        		add(
        			$current, 
        			"r",
-        		lv_r_6_0, 
+        		lv_r_3_0, 
         		"Recurse");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)this_END_7=RULE_END
+)this_END_4=RULE_END
     { 
-    newLeafNode(this_END_7, grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_4_2()); 
+    newLeafNode(this_END_4, grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_1_2()); 
     }
 ))+)
 ;
+finally {
+	myHiddenTokenState.restore();
+}
 
 
 
@@ -195,9 +190,9 @@ RULE_INT : ('0'..'9')+;
 
 RULE_STRING : ('"' ('\\' .|~(('\\'|'"')))* '"'|'\'' ('\\' .|~(('\\'|'\'')))* '\'');
 
-RULE_BEGIN : '{';
+RULE_BEGIN : '{|';
 
-RULE_END : '}';
+RULE_END : '|}';
 
 RULE_LINECONTINUATION : '\\';
 

@@ -26,14 +26,20 @@ public class PythonesqueTokenSource extends AbstractSplittingTokenSource {
   
   /**
    * state tells us what part of the line are we currently reading:
+   * FIRSTLINE - when reading firstline don't insert BEGIN because we don't need BEGIN-END round whole program.
    * INDENT - where we count the number of spaces or tabs to update indent
    * BODY - we have read a non-space since last newline so we are no longer in indent
    * CONTINUATION - we have just read a continuation token so next line does not alter indent
    * @author Martin Baker
    */
-  private enum StateValues {INDENT,BODY,CONTINUATION}
-  StateValues state = StateValues.INDENT;
+  private enum StateValues {FIRSTLINE,INDENT,BODY,CONTINUATION}
+  StateValues state = StateValues.FIRSTLINE;
   
+  /**
+   * This holds the indent of the first non-empty line
+   */
+  int initialIndent=0;
+
   /**
    * tell doSplitToken number of BEGINs to emit
    */
@@ -60,9 +66,33 @@ public class PythonesqueTokenSource extends AbstractSplittingTokenSource {
   
   @Override
   protected boolean shouldSplitToken(Token token) {
+    // if end-of-file then close any remaining blocks
+    if (token.getType() == Token.EOF) {
+      if (pile.empty()) return false;
+      while (!pile.empty()) {
+        pile.pop();
+        indentDecrement++;
+      }
+      return true;
+    }
 	lastToken = thisToken;
 	if (token instanceof CommonToken) thisToken = (CommonToken)token;
 	switch (state) {
+	  case FIRSTLINE:
+		if (token.getType() == InternalDemoLexer.RULE_WS) {
+		  indent=countSpaces(indent,token.getText());
+		  return false;
+		} else if (token.getType() == InternalDemoLexer.RULE_SL_COMMENT) {
+		  indent=0; // comment contains new line
+		  return false;
+		} else if (token.getType() == InternalDemoLexer.RULE_LINECONTINUATION) {
+		  state = StateValues.CONTINUATION;
+		  return false;
+		} else {
+		  state = StateValues.BODY;
+		  initialIndent=indent;
+		  return true;
+		}
 	  case INDENT:
 		if (token.getType() == InternalDemoLexer.RULE_WS) {
 		  indent=countSpaces(indent,token.getText());
@@ -75,13 +105,13 @@ public class PythonesqueTokenSource extends AbstractSplittingTokenSource {
 		  return false;
 		} else {
 		  state = StateValues.BODY;
-		  int peek =0;
+		  int peek =initialIndent; // if pile is empty use initialIndent
 		  if (!pile.empty()) peek=pile.peek();
 		  if (indent == peek) return false;
 		  if (indent < peek) {
   		    while (!pile.empty() && indent < peek) {
               pile.pop();
-              if (!pile.empty()) peek=pile.peek(); else peek=0;
+              if (!pile.empty()) peek=pile.peek(); else peek=initialIndent;
 			  indentDecrement++;
   		    }
 		  }

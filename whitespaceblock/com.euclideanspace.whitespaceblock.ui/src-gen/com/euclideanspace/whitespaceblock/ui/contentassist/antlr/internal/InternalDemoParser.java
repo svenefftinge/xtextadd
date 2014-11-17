@@ -22,17 +22,17 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDemoParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_WS", "RULE_SL_COMMENT", "RULE_LINECONTINUATION", "RULE_BEGIN", "RULE_END", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_BEGIN", "RULE_END", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_LINECONTINUATION", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
-    public static final int RULE_END=8;
-    public static final int RULE_BEGIN=7;
-    public static final int RULE_ID=9;
-    public static final int RULE_WS=4;
-    public static final int RULE_STRING=11;
+    public static final int RULE_END=5;
+    public static final int RULE_BEGIN=4;
+    public static final int RULE_ID=6;
+    public static final int RULE_WS=11;
+    public static final int RULE_STRING=8;
     public static final int RULE_ANY_OTHER=12;
-    public static final int RULE_SL_COMMENT=5;
-    public static final int RULE_INT=10;
-    public static final int RULE_LINECONTINUATION=6;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int RULE_INT=7;
+    public static final int RULE_LINECONTINUATION=9;
     public static final int EOF=-1;
 
     // delegates
@@ -152,18 +152,21 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
     // $ANTLR start "entryRuleRecurse"
     // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:88:1: entryRuleRecurse : ruleRecurse EOF ;
     public final void entryRuleRecurse() throws RecognitionException {
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_SL_COMMENT", "RULE_LINECONTINUATION");
+
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:89:1: ( ruleRecurse EOF )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:90:1: ruleRecurse EOF
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:92:1: ( ruleRecurse EOF )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:93:1: ruleRecurse EOF
             {
              before(grammarAccess.getRecurseRule()); 
-            pushFollow(FOLLOW_ruleRecurse_in_entryRuleRecurse121);
+            pushFollow(FOLLOW_ruleRecurse_in_entryRuleRecurse126);
             ruleRecurse();
 
             state._fsp--;
 
              after(grammarAccess.getRecurseRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRecurse128); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRecurse133); 
 
             }
 
@@ -173,6 +176,9 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
             recover(input,re);
         }
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return ;
     }
@@ -180,23 +186,24 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleRecurse"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:97:1: ruleRecurse : ( ( rule__Recurse__Group__0 ) ) ;
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:103:1: ruleRecurse : ( ( rule__Recurse__Group__0 ) ) ;
     public final void ruleRecurse() throws RecognitionException {
 
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_SL_COMMENT", "RULE_LINECONTINUATION");
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:101:2: ( ( ( rule__Recurse__Group__0 ) ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:102:1: ( ( rule__Recurse__Group__0 ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:108:2: ( ( ( rule__Recurse__Group__0 ) ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:109:1: ( ( rule__Recurse__Group__0 ) )
             {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:102:1: ( ( rule__Recurse__Group__0 ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:103:1: ( rule__Recurse__Group__0 )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:109:1: ( ( rule__Recurse__Group__0 ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:110:1: ( rule__Recurse__Group__0 )
             {
              before(grammarAccess.getRecurseAccess().getGroup()); 
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:104:1: ( rule__Recurse__Group__0 )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:104:2: rule__Recurse__Group__0
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:111:1: ( rule__Recurse__Group__0 )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:111:2: rule__Recurse__Group__0
             {
-            pushFollow(FOLLOW_rule__Recurse__Group__0_in_ruleRecurse154);
+            pushFollow(FOLLOW_rule__Recurse__Group__0_in_ruleRecurse163);
             rule__Recurse__Group__0();
 
             state._fsp--;
@@ -219,6 +226,7 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
         finally {
 
             	restoreStackSize(stackSize);
+            	myHiddenTokenState.restore();
 
         }
         return ;
@@ -227,59 +235,40 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recurse__Alternatives_1"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:116:1: rule__Recurse__Alternatives_1 : ( ( ( rule__Recurse__NAssignment_1_0 ) ) | ( RULE_WS ) | ( RULE_SL_COMMENT ) | ( RULE_LINECONTINUATION ) | ( ( rule__Recurse__Group_1_4__0 ) ) );
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:124:1: rule__Recurse__Alternatives_1 : ( ( ( rule__Recurse__NAssignment_1_0 ) ) | ( ( rule__Recurse__Group_1_1__0 ) ) );
     public final void rule__Recurse__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:120:1: ( ( ( rule__Recurse__NAssignment_1_0 ) ) | ( RULE_WS ) | ( RULE_SL_COMMENT ) | ( RULE_LINECONTINUATION ) | ( ( rule__Recurse__Group_1_4__0 ) ) )
-            int alt1=5;
-            switch ( input.LA(1) ) {
-            case RULE_ID:
-                {
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:128:1: ( ( ( rule__Recurse__NAssignment_1_0 ) ) | ( ( rule__Recurse__Group_1_1__0 ) ) )
+            int alt1=2;
+            int LA1_0 = input.LA(1);
+
+            if ( (LA1_0==RULE_ID) ) {
                 alt1=1;
-                }
-                break;
-            case RULE_WS:
-                {
+            }
+            else if ( (LA1_0==RULE_BEGIN) ) {
                 alt1=2;
-                }
-                break;
-            case RULE_SL_COMMENT:
-                {
-                alt1=3;
-                }
-                break;
-            case RULE_LINECONTINUATION:
-                {
-                alt1=4;
-                }
-                break;
-            case RULE_BEGIN:
-                {
-                alt1=5;
-                }
-                break;
-            default:
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 1, 0, input);
 
                 throw nvae;
             }
-
             switch (alt1) {
                 case 1 :
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:121:1: ( ( rule__Recurse__NAssignment_1_0 ) )
+                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:129:1: ( ( rule__Recurse__NAssignment_1_0 ) )
                     {
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:121:1: ( ( rule__Recurse__NAssignment_1_0 ) )
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:122:1: ( rule__Recurse__NAssignment_1_0 )
+                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:129:1: ( ( rule__Recurse__NAssignment_1_0 ) )
+                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:130:1: ( rule__Recurse__NAssignment_1_0 )
                     {
                      before(grammarAccess.getRecurseAccess().getNAssignment_1_0()); 
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:123:1: ( rule__Recurse__NAssignment_1_0 )
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:123:2: rule__Recurse__NAssignment_1_0
+                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:131:1: ( rule__Recurse__NAssignment_1_0 )
+                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:131:2: rule__Recurse__NAssignment_1_0
                     {
-                    pushFollow(FOLLOW_rule__Recurse__NAssignment_1_0_in_rule__Recurse__Alternatives_1190);
+                    pushFollow(FOLLOW_rule__Recurse__NAssignment_1_0_in_rule__Recurse__Alternatives_1199);
                     rule__Recurse__NAssignment_1_0();
 
                     state._fsp--;
@@ -295,69 +284,24 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:127:6: ( RULE_WS )
+                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:135:6: ( ( rule__Recurse__Group_1_1__0 ) )
                     {
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:127:6: ( RULE_WS )
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:128:1: RULE_WS
+                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:135:6: ( ( rule__Recurse__Group_1_1__0 ) )
+                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:136:1: ( rule__Recurse__Group_1_1__0 )
                     {
-                     before(grammarAccess.getRecurseAccess().getWSTerminalRuleCall_1_1()); 
-                    match(input,RULE_WS,FOLLOW_RULE_WS_in_rule__Recurse__Alternatives_1208); 
-                     after(grammarAccess.getRecurseAccess().getWSTerminalRuleCall_1_1()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 3 :
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:133:6: ( RULE_SL_COMMENT )
+                     before(grammarAccess.getRecurseAccess().getGroup_1_1()); 
+                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:137:1: ( rule__Recurse__Group_1_1__0 )
+                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:137:2: rule__Recurse__Group_1_1__0
                     {
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:133:6: ( RULE_SL_COMMENT )
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:134:1: RULE_SL_COMMENT
-                    {
-                     before(grammarAccess.getRecurseAccess().getSL_COMMENTTerminalRuleCall_1_2()); 
-                    match(input,RULE_SL_COMMENT,FOLLOW_RULE_SL_COMMENT_in_rule__Recurse__Alternatives_1225); 
-                     after(grammarAccess.getRecurseAccess().getSL_COMMENTTerminalRuleCall_1_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:139:6: ( RULE_LINECONTINUATION )
-                    {
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:139:6: ( RULE_LINECONTINUATION )
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:140:1: RULE_LINECONTINUATION
-                    {
-                     before(grammarAccess.getRecurseAccess().getLINECONTINUATIONTerminalRuleCall_1_3()); 
-                    match(input,RULE_LINECONTINUATION,FOLLOW_RULE_LINECONTINUATION_in_rule__Recurse__Alternatives_1242); 
-                     after(grammarAccess.getRecurseAccess().getLINECONTINUATIONTerminalRuleCall_1_3()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 5 :
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:145:6: ( ( rule__Recurse__Group_1_4__0 ) )
-                    {
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:145:6: ( ( rule__Recurse__Group_1_4__0 ) )
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:146:1: ( rule__Recurse__Group_1_4__0 )
-                    {
-                     before(grammarAccess.getRecurseAccess().getGroup_1_4()); 
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:147:1: ( rule__Recurse__Group_1_4__0 )
-                    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:147:2: rule__Recurse__Group_1_4__0
-                    {
-                    pushFollow(FOLLOW_rule__Recurse__Group_1_4__0_in_rule__Recurse__Alternatives_1259);
-                    rule__Recurse__Group_1_4__0();
+                    pushFollow(FOLLOW_rule__Recurse__Group_1_1__0_in_rule__Recurse__Alternatives_1217);
+                    rule__Recurse__Group_1_1__0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getRecurseAccess().getGroup_1_4()); 
+                     after(grammarAccess.getRecurseAccess().getGroup_1_1()); 
 
                     }
 
@@ -382,21 +326,21 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recurse__Group__0"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:158:1: rule__Recurse__Group__0 : rule__Recurse__Group__0__Impl rule__Recurse__Group__1 ;
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:148:1: rule__Recurse__Group__0 : rule__Recurse__Group__0__Impl rule__Recurse__Group__1 ;
     public final void rule__Recurse__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:162:1: ( rule__Recurse__Group__0__Impl rule__Recurse__Group__1 )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:163:2: rule__Recurse__Group__0__Impl rule__Recurse__Group__1
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:152:1: ( rule__Recurse__Group__0__Impl rule__Recurse__Group__1 )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:153:2: rule__Recurse__Group__0__Impl rule__Recurse__Group__1
             {
-            pushFollow(FOLLOW_rule__Recurse__Group__0__Impl_in_rule__Recurse__Group__0290);
+            pushFollow(FOLLOW_rule__Recurse__Group__0__Impl_in_rule__Recurse__Group__0248);
             rule__Recurse__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Recurse__Group__1_in_rule__Recurse__Group__0293);
+            pushFollow(FOLLOW_rule__Recurse__Group__1_in_rule__Recurse__Group__0251);
             rule__Recurse__Group__1();
 
             state._fsp--;
@@ -420,21 +364,21 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recurse__Group__0__Impl"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:170:1: rule__Recurse__Group__0__Impl : ( () ) ;
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:160:1: rule__Recurse__Group__0__Impl : ( () ) ;
     public final void rule__Recurse__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:174:1: ( ( () ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:175:1: ( () )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:164:1: ( ( () ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:165:1: ( () )
             {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:175:1: ( () )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:176:1: ()
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:165:1: ( () )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:166:1: ()
             {
              before(grammarAccess.getRecurseAccess().getRecurseAction_0()); 
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:177:1: ()
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:179:1: 
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:167:1: ()
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:169:1: 
             {
             }
 
@@ -457,16 +401,16 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recurse__Group__1"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:189:1: rule__Recurse__Group__1 : rule__Recurse__Group__1__Impl ;
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:179:1: rule__Recurse__Group__1 : rule__Recurse__Group__1__Impl ;
     public final void rule__Recurse__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:193:1: ( rule__Recurse__Group__1__Impl )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:194:2: rule__Recurse__Group__1__Impl
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:183:1: ( rule__Recurse__Group__1__Impl )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:184:2: rule__Recurse__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Recurse__Group__1__Impl_in_rule__Recurse__Group__1351);
+            pushFollow(FOLLOW_rule__Recurse__Group__1__Impl_in_rule__Recurse__Group__1309);
             rule__Recurse__Group__1__Impl();
 
             state._fsp--;
@@ -490,26 +434,26 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recurse__Group__1__Impl"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:200:1: rule__Recurse__Group__1__Impl : ( ( ( rule__Recurse__Alternatives_1 ) ) ( ( rule__Recurse__Alternatives_1 )* ) ) ;
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:190:1: rule__Recurse__Group__1__Impl : ( ( ( rule__Recurse__Alternatives_1 ) ) ( ( rule__Recurse__Alternatives_1 )* ) ) ;
     public final void rule__Recurse__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:204:1: ( ( ( ( rule__Recurse__Alternatives_1 ) ) ( ( rule__Recurse__Alternatives_1 )* ) ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:205:1: ( ( ( rule__Recurse__Alternatives_1 ) ) ( ( rule__Recurse__Alternatives_1 )* ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:194:1: ( ( ( ( rule__Recurse__Alternatives_1 ) ) ( ( rule__Recurse__Alternatives_1 )* ) ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:195:1: ( ( ( rule__Recurse__Alternatives_1 ) ) ( ( rule__Recurse__Alternatives_1 )* ) )
             {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:205:1: ( ( ( rule__Recurse__Alternatives_1 ) ) ( ( rule__Recurse__Alternatives_1 )* ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:206:1: ( ( rule__Recurse__Alternatives_1 ) ) ( ( rule__Recurse__Alternatives_1 )* )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:195:1: ( ( ( rule__Recurse__Alternatives_1 ) ) ( ( rule__Recurse__Alternatives_1 )* ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:196:1: ( ( rule__Recurse__Alternatives_1 ) ) ( ( rule__Recurse__Alternatives_1 )* )
             {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:206:1: ( ( rule__Recurse__Alternatives_1 ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:207:1: ( rule__Recurse__Alternatives_1 )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:196:1: ( ( rule__Recurse__Alternatives_1 ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:197:1: ( rule__Recurse__Alternatives_1 )
             {
              before(grammarAccess.getRecurseAccess().getAlternatives_1()); 
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:208:1: ( rule__Recurse__Alternatives_1 )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:208:2: rule__Recurse__Alternatives_1
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:198:1: ( rule__Recurse__Alternatives_1 )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:198:2: rule__Recurse__Alternatives_1
             {
-            pushFollow(FOLLOW_rule__Recurse__Alternatives_1_in_rule__Recurse__Group__1__Impl380);
+            pushFollow(FOLLOW_rule__Recurse__Alternatives_1_in_rule__Recurse__Group__1__Impl338);
             rule__Recurse__Alternatives_1();
 
             state._fsp--;
@@ -521,26 +465,26 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:211:1: ( ( rule__Recurse__Alternatives_1 )* )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:212:1: ( rule__Recurse__Alternatives_1 )*
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:201:1: ( ( rule__Recurse__Alternatives_1 )* )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:202:1: ( rule__Recurse__Alternatives_1 )*
             {
              before(grammarAccess.getRecurseAccess().getAlternatives_1()); 
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:213:1: ( rule__Recurse__Alternatives_1 )*
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:203:1: ( rule__Recurse__Alternatives_1 )*
             loop2:
             do {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( ((LA2_0>=RULE_WS && LA2_0<=RULE_BEGIN)||LA2_0==RULE_ID) ) {
+                if ( (LA2_0==RULE_BEGIN||LA2_0==RULE_ID) ) {
                     alt2=1;
                 }
 
 
                 switch (alt2) {
             	case 1 :
-            	    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:213:2: rule__Recurse__Alternatives_1
+            	    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:203:2: rule__Recurse__Alternatives_1
             	    {
-            	    pushFollow(FOLLOW_rule__Recurse__Alternatives_1_in_rule__Recurse__Group__1__Impl392);
+            	    pushFollow(FOLLOW_rule__Recurse__Alternatives_1_in_rule__Recurse__Group__1__Impl350);
             	    rule__Recurse__Alternatives_1();
 
             	    state._fsp--;
@@ -579,98 +523,23 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Recurse__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Recurse__Group_1_4__0"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:228:1: rule__Recurse__Group_1_4__0 : rule__Recurse__Group_1_4__0__Impl rule__Recurse__Group_1_4__1 ;
-    public final void rule__Recurse__Group_1_4__0() throws RecognitionException {
+    // $ANTLR start "rule__Recurse__Group_1_1__0"
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:218:1: rule__Recurse__Group_1_1__0 : rule__Recurse__Group_1_1__0__Impl rule__Recurse__Group_1_1__1 ;
+    public final void rule__Recurse__Group_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:232:1: ( rule__Recurse__Group_1_4__0__Impl rule__Recurse__Group_1_4__1 )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:233:2: rule__Recurse__Group_1_4__0__Impl rule__Recurse__Group_1_4__1
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:222:1: ( rule__Recurse__Group_1_1__0__Impl rule__Recurse__Group_1_1__1 )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:223:2: rule__Recurse__Group_1_1__0__Impl rule__Recurse__Group_1_1__1
             {
-            pushFollow(FOLLOW_rule__Recurse__Group_1_4__0__Impl_in_rule__Recurse__Group_1_4__0429);
-            rule__Recurse__Group_1_4__0__Impl();
+            pushFollow(FOLLOW_rule__Recurse__Group_1_1__0__Impl_in_rule__Recurse__Group_1_1__0387);
+            rule__Recurse__Group_1_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Recurse__Group_1_4__1_in_rule__Recurse__Group_1_4__0432);
-            rule__Recurse__Group_1_4__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Recurse__Group_1_4__0"
-
-
-    // $ANTLR start "rule__Recurse__Group_1_4__0__Impl"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:240:1: rule__Recurse__Group_1_4__0__Impl : ( RULE_BEGIN ) ;
-    public final void rule__Recurse__Group_1_4__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:244:1: ( ( RULE_BEGIN ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:245:1: ( RULE_BEGIN )
-            {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:245:1: ( RULE_BEGIN )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:246:1: RULE_BEGIN
-            {
-             before(grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_4_0()); 
-            match(input,RULE_BEGIN,FOLLOW_RULE_BEGIN_in_rule__Recurse__Group_1_4__0__Impl459); 
-             after(grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Recurse__Group_1_4__0__Impl"
-
-
-    // $ANTLR start "rule__Recurse__Group_1_4__1"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:257:1: rule__Recurse__Group_1_4__1 : rule__Recurse__Group_1_4__1__Impl rule__Recurse__Group_1_4__2 ;
-    public final void rule__Recurse__Group_1_4__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:261:1: ( rule__Recurse__Group_1_4__1__Impl rule__Recurse__Group_1_4__2 )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:262:2: rule__Recurse__Group_1_4__1__Impl rule__Recurse__Group_1_4__2
-            {
-            pushFollow(FOLLOW_rule__Recurse__Group_1_4__1__Impl_in_rule__Recurse__Group_1_4__1488);
-            rule__Recurse__Group_1_4__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__Recurse__Group_1_4__2_in_rule__Recurse__Group_1_4__1491);
-            rule__Recurse__Group_1_4__2();
+            pushFollow(FOLLOW_rule__Recurse__Group_1_1__1_in_rule__Recurse__Group_1_1__0390);
+            rule__Recurse__Group_1_1__1();
 
             state._fsp--;
 
@@ -689,35 +558,110 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Recurse__Group_1_4__1"
+    // $ANTLR end "rule__Recurse__Group_1_1__0"
 
 
-    // $ANTLR start "rule__Recurse__Group_1_4__1__Impl"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:269:1: rule__Recurse__Group_1_4__1__Impl : ( ( rule__Recurse__RAssignment_1_4_1 ) ) ;
-    public final void rule__Recurse__Group_1_4__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Recurse__Group_1_1__0__Impl"
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:230:1: rule__Recurse__Group_1_1__0__Impl : ( RULE_BEGIN ) ;
+    public final void rule__Recurse__Group_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:273:1: ( ( ( rule__Recurse__RAssignment_1_4_1 ) ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:274:1: ( ( rule__Recurse__RAssignment_1_4_1 ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:234:1: ( ( RULE_BEGIN ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:235:1: ( RULE_BEGIN )
             {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:274:1: ( ( rule__Recurse__RAssignment_1_4_1 ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:275:1: ( rule__Recurse__RAssignment_1_4_1 )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:235:1: ( RULE_BEGIN )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:236:1: RULE_BEGIN
             {
-             before(grammarAccess.getRecurseAccess().getRAssignment_1_4_1()); 
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:276:1: ( rule__Recurse__RAssignment_1_4_1 )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:276:2: rule__Recurse__RAssignment_1_4_1
+             before(grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_1_0()); 
+            match(input,RULE_BEGIN,FOLLOW_RULE_BEGIN_in_rule__Recurse__Group_1_1__0__Impl417); 
+             after(grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Recurse__Group_1_1__0__Impl"
+
+
+    // $ANTLR start "rule__Recurse__Group_1_1__1"
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:247:1: rule__Recurse__Group_1_1__1 : rule__Recurse__Group_1_1__1__Impl rule__Recurse__Group_1_1__2 ;
+    public final void rule__Recurse__Group_1_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:251:1: ( rule__Recurse__Group_1_1__1__Impl rule__Recurse__Group_1_1__2 )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:252:2: rule__Recurse__Group_1_1__1__Impl rule__Recurse__Group_1_1__2
             {
-            pushFollow(FOLLOW_rule__Recurse__RAssignment_1_4_1_in_rule__Recurse__Group_1_4__1__Impl518);
-            rule__Recurse__RAssignment_1_4_1();
+            pushFollow(FOLLOW_rule__Recurse__Group_1_1__1__Impl_in_rule__Recurse__Group_1_1__1446);
+            rule__Recurse__Group_1_1__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Recurse__Group_1_1__2_in_rule__Recurse__Group_1_1__1449);
+            rule__Recurse__Group_1_1__2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRecurseAccess().getRAssignment_1_4_1()); 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Recurse__Group_1_1__1"
+
+
+    // $ANTLR start "rule__Recurse__Group_1_1__1__Impl"
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:259:1: rule__Recurse__Group_1_1__1__Impl : ( ( rule__Recurse__RAssignment_1_1_1 ) ) ;
+    public final void rule__Recurse__Group_1_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:263:1: ( ( ( rule__Recurse__RAssignment_1_1_1 ) ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:264:1: ( ( rule__Recurse__RAssignment_1_1_1 ) )
+            {
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:264:1: ( ( rule__Recurse__RAssignment_1_1_1 ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:265:1: ( rule__Recurse__RAssignment_1_1_1 )
+            {
+             before(grammarAccess.getRecurseAccess().getRAssignment_1_1_1()); 
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:266:1: ( rule__Recurse__RAssignment_1_1_1 )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:266:2: rule__Recurse__RAssignment_1_1_1
+            {
+            pushFollow(FOLLOW_rule__Recurse__RAssignment_1_1_1_in_rule__Recurse__Group_1_1__1__Impl476);
+            rule__Recurse__RAssignment_1_1_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRecurseAccess().getRAssignment_1_1_1()); 
 
             }
 
@@ -736,21 +680,21 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Recurse__Group_1_4__1__Impl"
+    // $ANTLR end "rule__Recurse__Group_1_1__1__Impl"
 
 
-    // $ANTLR start "rule__Recurse__Group_1_4__2"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:286:1: rule__Recurse__Group_1_4__2 : rule__Recurse__Group_1_4__2__Impl ;
-    public final void rule__Recurse__Group_1_4__2() throws RecognitionException {
+    // $ANTLR start "rule__Recurse__Group_1_1__2"
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:276:1: rule__Recurse__Group_1_1__2 : rule__Recurse__Group_1_1__2__Impl ;
+    public final void rule__Recurse__Group_1_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:290:1: ( rule__Recurse__Group_1_4__2__Impl )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:291:2: rule__Recurse__Group_1_4__2__Impl
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:280:1: ( rule__Recurse__Group_1_1__2__Impl )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:281:2: rule__Recurse__Group_1_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__Recurse__Group_1_4__2__Impl_in_rule__Recurse__Group_1_4__2548);
-            rule__Recurse__Group_1_4__2__Impl();
+            pushFollow(FOLLOW_rule__Recurse__Group_1_1__2__Impl_in_rule__Recurse__Group_1_1__2506);
+            rule__Recurse__Group_1_1__2__Impl();
 
             state._fsp--;
 
@@ -769,25 +713,25 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Recurse__Group_1_4__2"
+    // $ANTLR end "rule__Recurse__Group_1_1__2"
 
 
-    // $ANTLR start "rule__Recurse__Group_1_4__2__Impl"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:297:1: rule__Recurse__Group_1_4__2__Impl : ( RULE_END ) ;
-    public final void rule__Recurse__Group_1_4__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Recurse__Group_1_1__2__Impl"
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:287:1: rule__Recurse__Group_1_1__2__Impl : ( RULE_END ) ;
+    public final void rule__Recurse__Group_1_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:301:1: ( ( RULE_END ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:302:1: ( RULE_END )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:291:1: ( ( RULE_END ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:292:1: ( RULE_END )
             {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:302:1: ( RULE_END )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:303:1: RULE_END
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:292:1: ( RULE_END )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:293:1: RULE_END
             {
-             before(grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_4_2()); 
-            match(input,RULE_END,FOLLOW_RULE_END_in_rule__Recurse__Group_1_4__2__Impl575); 
-             after(grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_4_2()); 
+             before(grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_1_2()); 
+            match(input,RULE_END,FOLLOW_RULE_END_in_rule__Recurse__Group_1_1__2__Impl533); 
+             after(grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_1_2()); 
 
             }
 
@@ -806,24 +750,24 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Recurse__Group_1_4__2__Impl"
+    // $ANTLR end "rule__Recurse__Group_1_1__2__Impl"
 
 
     // $ANTLR start "rule__Model__ContentsAssignment"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:321:1: rule__Model__ContentsAssignment : ( ruleRecurse ) ;
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:311:1: rule__Model__ContentsAssignment : ( ruleRecurse ) ;
     public final void rule__Model__ContentsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:325:1: ( ( ruleRecurse ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:326:1: ( ruleRecurse )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:315:1: ( ( ruleRecurse ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:316:1: ( ruleRecurse )
             {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:326:1: ( ruleRecurse )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:327:1: ruleRecurse
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:316:1: ( ruleRecurse )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:317:1: ruleRecurse
             {
              before(grammarAccess.getModelAccess().getContentsRecurseParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleRecurse_in_rule__Model__ContentsAssignment615);
+            pushFollow(FOLLOW_ruleRecurse_in_rule__Model__ContentsAssignment573);
             ruleRecurse();
 
             state._fsp--;
@@ -851,20 +795,20 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Recurse__NAssignment_1_0"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:336:1: rule__Recurse__NAssignment_1_0 : ( RULE_ID ) ;
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:326:1: rule__Recurse__NAssignment_1_0 : ( RULE_ID ) ;
     public final void rule__Recurse__NAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:340:1: ( ( RULE_ID ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:341:1: ( RULE_ID )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:330:1: ( ( RULE_ID ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:331:1: ( RULE_ID )
             {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:341:1: ( RULE_ID )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:342:1: RULE_ID
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:331:1: ( RULE_ID )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:332:1: RULE_ID
             {
              before(grammarAccess.getRecurseAccess().getNIDTerminalRuleCall_1_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Recurse__NAssignment_1_0646); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Recurse__NAssignment_1_0604); 
              after(grammarAccess.getRecurseAccess().getNIDTerminalRuleCall_1_0_0()); 
 
             }
@@ -887,26 +831,26 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Recurse__NAssignment_1_0"
 
 
-    // $ANTLR start "rule__Recurse__RAssignment_1_4_1"
-    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:351:1: rule__Recurse__RAssignment_1_4_1 : ( ruleRecurse ) ;
-    public final void rule__Recurse__RAssignment_1_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Recurse__RAssignment_1_1_1"
+    // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:341:1: rule__Recurse__RAssignment_1_1_1 : ( ruleRecurse ) ;
+    public final void rule__Recurse__RAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:355:1: ( ( ruleRecurse ) )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:356:1: ( ruleRecurse )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:345:1: ( ( ruleRecurse ) )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:346:1: ( ruleRecurse )
             {
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:356:1: ( ruleRecurse )
-            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:357:1: ruleRecurse
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:346:1: ( ruleRecurse )
+            // ../com.euclideanspace.whitespaceblock.ui/src-gen/com/euclideanspace/whitespaceblock/ui/contentassist/antlr/internal/InternalDemo.g:347:1: ruleRecurse
             {
-             before(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_4_1_0()); 
-            pushFollow(FOLLOW_ruleRecurse_in_rule__Recurse__RAssignment_1_4_1677);
+             before(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_1_1_0()); 
+            pushFollow(FOLLOW_ruleRecurse_in_rule__Recurse__RAssignment_1_1_1635);
             ruleRecurse();
 
             state._fsp--;
 
-             after(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_4_1_0()); 
+             after(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_1_1_0()); 
 
             }
 
@@ -925,7 +869,7 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Recurse__RAssignment_1_4_1"
+    // $ANTLR end "rule__Recurse__RAssignment_1_1_1"
 
     // Delegated rules
 
@@ -935,29 +879,26 @@ public class InternalDemoParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel61 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel68 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Model__ContentsAssignment_in_ruleModel94 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRecurse_in_entryRuleRecurse121 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRecurse128 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Recurse__Group__0_in_ruleRecurse154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Recurse__NAssignment_1_0_in_rule__Recurse__Alternatives_1190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_rule__Recurse__Alternatives_1208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_SL_COMMENT_in_rule__Recurse__Alternatives_1225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LINECONTINUATION_in_rule__Recurse__Alternatives_1242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Recurse__Group_1_4__0_in_rule__Recurse__Alternatives_1259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Recurse__Group__0__Impl_in_rule__Recurse__Group__0290 = new BitSet(new long[]{0x00000000000002F0L});
-    public static final BitSet FOLLOW_rule__Recurse__Group__1_in_rule__Recurse__Group__0293 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Recurse__Group__1__Impl_in_rule__Recurse__Group__1351 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Recurse__Alternatives_1_in_rule__Recurse__Group__1__Impl380 = new BitSet(new long[]{0x00000000000002F2L});
-    public static final BitSet FOLLOW_rule__Recurse__Alternatives_1_in_rule__Recurse__Group__1__Impl392 = new BitSet(new long[]{0x00000000000002F2L});
-    public static final BitSet FOLLOW_rule__Recurse__Group_1_4__0__Impl_in_rule__Recurse__Group_1_4__0429 = new BitSet(new long[]{0x00000000000002F0L});
-    public static final BitSet FOLLOW_rule__Recurse__Group_1_4__1_in_rule__Recurse__Group_1_4__0432 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_BEGIN_in_rule__Recurse__Group_1_4__0__Impl459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Recurse__Group_1_4__1__Impl_in_rule__Recurse__Group_1_4__1488 = new BitSet(new long[]{0x0000000000000100L});
-    public static final BitSet FOLLOW_rule__Recurse__Group_1_4__2_in_rule__Recurse__Group_1_4__1491 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Recurse__RAssignment_1_4_1_in_rule__Recurse__Group_1_4__1__Impl518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Recurse__Group_1_4__2__Impl_in_rule__Recurse__Group_1_4__2548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_END_in_rule__Recurse__Group_1_4__2__Impl575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRecurse_in_rule__Model__ContentsAssignment615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Recurse__NAssignment_1_0646 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRecurse_in_rule__Recurse__RAssignment_1_4_1677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRecurse_in_entryRuleRecurse126 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRecurse133 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Recurse__Group__0_in_ruleRecurse163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Recurse__NAssignment_1_0_in_rule__Recurse__Alternatives_1199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Recurse__Group_1_1__0_in_rule__Recurse__Alternatives_1217 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Recurse__Group__0__Impl_in_rule__Recurse__Group__0248 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_rule__Recurse__Group__1_in_rule__Recurse__Group__0251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Recurse__Group__1__Impl_in_rule__Recurse__Group__1309 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Recurse__Alternatives_1_in_rule__Recurse__Group__1__Impl338 = new BitSet(new long[]{0x0000000000000052L});
+    public static final BitSet FOLLOW_rule__Recurse__Alternatives_1_in_rule__Recurse__Group__1__Impl350 = new BitSet(new long[]{0x0000000000000052L});
+    public static final BitSet FOLLOW_rule__Recurse__Group_1_1__0__Impl_in_rule__Recurse__Group_1_1__0387 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_rule__Recurse__Group_1_1__1_in_rule__Recurse__Group_1_1__0390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_BEGIN_in_rule__Recurse__Group_1_1__0__Impl417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Recurse__Group_1_1__1__Impl_in_rule__Recurse__Group_1_1__1446 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Recurse__Group_1_1__2_in_rule__Recurse__Group_1_1__1449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Recurse__RAssignment_1_1_1_in_rule__Recurse__Group_1_1__1__Impl476 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Recurse__Group_1_1__2__Impl_in_rule__Recurse__Group_1_1__2506 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_END_in_rule__Recurse__Group_1_1__2__Impl533 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRecurse_in_rule__Model__ContentsAssignment573 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Recurse__NAssignment_1_0604 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRecurse_in_rule__Recurse__RAssignment_1_1_1635 = new BitSet(new long[]{0x0000000000000002L});
 
 }

@@ -50,7 +50,7 @@ public class DemoSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     ((n+=ID | r+=Recurse)*)
+	 *     (n+=ID | r+=Recurse)+
 	 */
 	protected void sequence_Recurse(EObject context, Recurse semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

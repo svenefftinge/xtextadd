@@ -23,10 +23,11 @@ terminal STRING	:
 		; 
 
 /* phantom tokens:
- * TODO Should really use something other than '{' and '}' to avoid clash in Python
+ * use something other than '{' and '}' to avoid clash in Python so we use '{|' and '|}' 
+ * TODO Should really use something more obscure to avoid clash in any user language
  */
-terminal BEGIN : '{';
-terminal END : '}';
+terminal BEGIN : '{|';
+terminal END : '|}';
 
 /* if newline follows this then ignore indent changes */
 terminal LINECONTINUATION : '\\';
@@ -46,9 +47,9 @@ terminal WS : (' '|'\t'|'\r'|'\n')+;
 terminal ANY_OTHER: .;
 /////////////////////////// end of temporary terminals /////////////////////////
 
-Recurse:
+Recurse hidden(WS,SL_COMMENT,LINECONTINUATION):
   {Recurse}(
-    n+=ID | WS | SL_COMMENT | LINECONTINUATION
+    n+=ID
     | (BEGIN r+=Recurse END)
   )+
 ;

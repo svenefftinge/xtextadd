@@ -21,17 +21,17 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDemoParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_WS", "RULE_SL_COMMENT", "RULE_LINECONTINUATION", "RULE_BEGIN", "RULE_END", "RULE_INT", "RULE_STRING", "RULE_ANY_OTHER"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_BEGIN", "RULE_END", "RULE_INT", "RULE_STRING", "RULE_LINECONTINUATION", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER"
     };
-    public static final int RULE_END=9;
-    public static final int RULE_BEGIN=8;
+    public static final int RULE_END=6;
+    public static final int RULE_BEGIN=5;
     public static final int RULE_ID=4;
-    public static final int RULE_WS=5;
-    public static final int RULE_STRING=11;
+    public static final int RULE_WS=11;
+    public static final int RULE_STRING=8;
     public static final int RULE_ANY_OTHER=12;
-    public static final int RULE_SL_COMMENT=6;
-    public static final int RULE_INT=10;
-    public static final int RULE_LINECONTINUATION=7;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int RULE_INT=7;
+    public static final int RULE_LINECONTINUATION=9;
     public static final int EOF=-1;
 
     // delegates
@@ -178,18 +178,21 @@ public class InternalDemoParser extends AbstractInternalAntlrParser {
         EObject iv_ruleRecurse = null;
 
 
+         
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_SL_COMMENT", "RULE_LINECONTINUATION");
+        	
         try {
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:107:2: (iv_ruleRecurse= ruleRecurse EOF )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:108:2: iv_ruleRecurse= ruleRecurse EOF
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:110:2: (iv_ruleRecurse= ruleRecurse EOF )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:111:2: iv_ruleRecurse= ruleRecurse EOF
             {
              newCompositeNode(grammarAccess.getRecurseRule()); 
-            pushFollow(FOLLOW_ruleRecurse_in_entryRuleRecurse165);
+            pushFollow(FOLLOW_ruleRecurse_in_entryRuleRecurse171);
             iv_ruleRecurse=ruleRecurse();
 
             state._fsp--;
 
              current =iv_ruleRecurse; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRecurse175); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRecurse181); 
 
             }
 
@@ -200,6 +203,9 @@ public class InternalDemoParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             } 
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
@@ -207,30 +213,28 @@ public class InternalDemoParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRecurse"
-    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:115:1: ruleRecurse returns [EObject current=null] : ( () ( ( (lv_n_1_0= RULE_ID ) ) | this_WS_2= RULE_WS | this_SL_COMMENT_3= RULE_SL_COMMENT | this_LINECONTINUATION_4= RULE_LINECONTINUATION | (this_BEGIN_5= RULE_BEGIN ( (lv_r_6_0= ruleRecurse ) ) this_END_7= RULE_END ) )+ ) ;
+    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:121:1: ruleRecurse returns [EObject current=null] : ( () ( ( (lv_n_1_0= RULE_ID ) ) | (this_BEGIN_2= RULE_BEGIN ( (lv_r_3_0= ruleRecurse ) ) this_END_4= RULE_END ) )+ ) ;
     public final EObject ruleRecurse() throws RecognitionException {
         EObject current = null;
 
         Token lv_n_1_0=null;
-        Token this_WS_2=null;
-        Token this_SL_COMMENT_3=null;
-        Token this_LINECONTINUATION_4=null;
-        Token this_BEGIN_5=null;
-        Token this_END_7=null;
-        EObject lv_r_6_0 = null;
+        Token this_BEGIN_2=null;
+        Token this_END_4=null;
+        EObject lv_r_3_0 = null;
 
 
          enterRule(); 
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_WS", "RULE_SL_COMMENT", "RULE_LINECONTINUATION");
             
         try {
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:118:28: ( ( () ( ( (lv_n_1_0= RULE_ID ) ) | this_WS_2= RULE_WS | this_SL_COMMENT_3= RULE_SL_COMMENT | this_LINECONTINUATION_4= RULE_LINECONTINUATION | (this_BEGIN_5= RULE_BEGIN ( (lv_r_6_0= ruleRecurse ) ) this_END_7= RULE_END ) )+ ) )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:119:1: ( () ( ( (lv_n_1_0= RULE_ID ) ) | this_WS_2= RULE_WS | this_SL_COMMENT_3= RULE_SL_COMMENT | this_LINECONTINUATION_4= RULE_LINECONTINUATION | (this_BEGIN_5= RULE_BEGIN ( (lv_r_6_0= ruleRecurse ) ) this_END_7= RULE_END ) )+ )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:125:28: ( ( () ( ( (lv_n_1_0= RULE_ID ) ) | (this_BEGIN_2= RULE_BEGIN ( (lv_r_3_0= ruleRecurse ) ) this_END_4= RULE_END ) )+ ) )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:126:1: ( () ( ( (lv_n_1_0= RULE_ID ) ) | (this_BEGIN_2= RULE_BEGIN ( (lv_r_3_0= ruleRecurse ) ) this_END_4= RULE_END ) )+ )
             {
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:119:1: ( () ( ( (lv_n_1_0= RULE_ID ) ) | this_WS_2= RULE_WS | this_SL_COMMENT_3= RULE_SL_COMMENT | this_LINECONTINUATION_4= RULE_LINECONTINUATION | (this_BEGIN_5= RULE_BEGIN ( (lv_r_6_0= ruleRecurse ) ) this_END_7= RULE_END ) )+ )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:119:2: () ( ( (lv_n_1_0= RULE_ID ) ) | this_WS_2= RULE_WS | this_SL_COMMENT_3= RULE_SL_COMMENT | this_LINECONTINUATION_4= RULE_LINECONTINUATION | (this_BEGIN_5= RULE_BEGIN ( (lv_r_6_0= ruleRecurse ) ) this_END_7= RULE_END ) )+
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:126:1: ( () ( ( (lv_n_1_0= RULE_ID ) ) | (this_BEGIN_2= RULE_BEGIN ( (lv_r_3_0= ruleRecurse ) ) this_END_4= RULE_END ) )+ )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:126:2: () ( ( (lv_n_1_0= RULE_ID ) ) | (this_BEGIN_2= RULE_BEGIN ( (lv_r_3_0= ruleRecurse ) ) this_END_4= RULE_END ) )+
             {
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:119:2: ()
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:120:5: 
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:126:2: ()
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:127:5: 
             {
 
                     current = forceCreateModelElement(
@@ -240,51 +244,32 @@ public class InternalDemoParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:125:2: ( ( (lv_n_1_0= RULE_ID ) ) | this_WS_2= RULE_WS | this_SL_COMMENT_3= RULE_SL_COMMENT | this_LINECONTINUATION_4= RULE_LINECONTINUATION | (this_BEGIN_5= RULE_BEGIN ( (lv_r_6_0= ruleRecurse ) ) this_END_7= RULE_END ) )+
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:132:2: ( ( (lv_n_1_0= RULE_ID ) ) | (this_BEGIN_2= RULE_BEGIN ( (lv_r_3_0= ruleRecurse ) ) this_END_4= RULE_END ) )+
             int cnt1=0;
             loop1:
             do {
-                int alt1=6;
-                switch ( input.LA(1) ) {
-                case RULE_ID:
-                    {
-                    alt1=1;
-                    }
-                    break;
-                case RULE_WS:
-                    {
-                    alt1=2;
-                    }
-                    break;
-                case RULE_SL_COMMENT:
-                    {
-                    alt1=3;
-                    }
-                    break;
-                case RULE_LINECONTINUATION:
-                    {
-                    alt1=4;
-                    }
-                    break;
-                case RULE_BEGIN:
-                    {
-                    alt1=5;
-                    }
-                    break;
+                int alt1=3;
+                int LA1_0 = input.LA(1);
 
+                if ( (LA1_0==RULE_ID) ) {
+                    alt1=1;
                 }
+                else if ( (LA1_0==RULE_BEGIN) ) {
+                    alt1=2;
+                }
+
 
                 switch (alt1) {
             	case 1 :
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:125:3: ( (lv_n_1_0= RULE_ID ) )
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:132:3: ( (lv_n_1_0= RULE_ID ) )
             	    {
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:125:3: ( (lv_n_1_0= RULE_ID ) )
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:126:1: (lv_n_1_0= RULE_ID )
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:132:3: ( (lv_n_1_0= RULE_ID ) )
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:133:1: (lv_n_1_0= RULE_ID )
             	    {
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:126:1: (lv_n_1_0= RULE_ID )
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:127:3: lv_n_1_0= RULE_ID
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:133:1: (lv_n_1_0= RULE_ID )
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:134:3: lv_n_1_0= RULE_ID
             	    {
-            	    lv_n_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRecurse227); 
+            	    lv_n_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleRecurse237); 
 
             	    			newLeafNode(lv_n_1_0, grammarAccess.getRecurseAccess().getNIDTerminalRuleCall_1_0_0()); 
             	    		
@@ -308,56 +293,26 @@ public class InternalDemoParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:144:6: this_WS_2= RULE_WS
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:151:6: (this_BEGIN_2= RULE_BEGIN ( (lv_r_3_0= ruleRecurse ) ) this_END_4= RULE_END )
             	    {
-            	    this_WS_2=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleRecurse249); 
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:151:6: (this_BEGIN_2= RULE_BEGIN ( (lv_r_3_0= ruleRecurse ) ) this_END_4= RULE_END )
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:151:7: this_BEGIN_2= RULE_BEGIN ( (lv_r_3_0= ruleRecurse ) ) this_END_4= RULE_END
+            	    {
+            	    this_BEGIN_2=(Token)match(input,RULE_BEGIN,FOLLOW_RULE_BEGIN_in_ruleRecurse260); 
             	     
-            	        newLeafNode(this_WS_2, grammarAccess.getRecurseAccess().getWSTerminalRuleCall_1_1()); 
+            	        newLeafNode(this_BEGIN_2, grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_1_0()); 
             	        
-
-            	    }
-            	    break;
-            	case 3 :
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:149:6: this_SL_COMMENT_3= RULE_SL_COMMENT
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:155:1: ( (lv_r_3_0= ruleRecurse ) )
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:156:1: (lv_r_3_0= ruleRecurse )
             	    {
-            	    this_SL_COMMENT_3=(Token)match(input,RULE_SL_COMMENT,FOLLOW_RULE_SL_COMMENT_in_ruleRecurse265); 
-            	     
-            	        newLeafNode(this_SL_COMMENT_3, grammarAccess.getRecurseAccess().getSL_COMMENTTerminalRuleCall_1_2()); 
-            	        
-
-            	    }
-            	    break;
-            	case 4 :
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:154:6: this_LINECONTINUATION_4= RULE_LINECONTINUATION
-            	    {
-            	    this_LINECONTINUATION_4=(Token)match(input,RULE_LINECONTINUATION,FOLLOW_RULE_LINECONTINUATION_in_ruleRecurse281); 
-            	     
-            	        newLeafNode(this_LINECONTINUATION_4, grammarAccess.getRecurseAccess().getLINECONTINUATIONTerminalRuleCall_1_3()); 
-            	        
-
-            	    }
-            	    break;
-            	case 5 :
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:159:6: (this_BEGIN_5= RULE_BEGIN ( (lv_r_6_0= ruleRecurse ) ) this_END_7= RULE_END )
-            	    {
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:159:6: (this_BEGIN_5= RULE_BEGIN ( (lv_r_6_0= ruleRecurse ) ) this_END_7= RULE_END )
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:159:7: this_BEGIN_5= RULE_BEGIN ( (lv_r_6_0= ruleRecurse ) ) this_END_7= RULE_END
-            	    {
-            	    this_BEGIN_5=(Token)match(input,RULE_BEGIN,FOLLOW_RULE_BEGIN_in_ruleRecurse298); 
-            	     
-            	        newLeafNode(this_BEGIN_5, grammarAccess.getRecurseAccess().getBEGINTerminalRuleCall_1_4_0()); 
-            	        
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:163:1: ( (lv_r_6_0= ruleRecurse ) )
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:164:1: (lv_r_6_0= ruleRecurse )
-            	    {
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:164:1: (lv_r_6_0= ruleRecurse )
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:165:3: lv_r_6_0= ruleRecurse
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:156:1: (lv_r_3_0= ruleRecurse )
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:157:3: lv_r_3_0= ruleRecurse
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_4_1_0()); 
+            	    	        newCompositeNode(grammarAccess.getRecurseAccess().getRRecurseParserRuleCall_1_1_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleRecurse_in_ruleRecurse318);
-            	    lv_r_6_0=ruleRecurse();
+            	    pushFollow(FOLLOW_ruleRecurse_in_ruleRecurse280);
+            	    lv_r_3_0=ruleRecurse();
 
             	    state._fsp--;
 
@@ -368,7 +323,7 @@ public class InternalDemoParser extends AbstractInternalAntlrParser {
             	           		add(
             	           			current, 
             	           			"r",
-            	            		lv_r_6_0, 
+            	            		lv_r_3_0, 
             	            		"Recurse");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -378,9 +333,9 @@ public class InternalDemoParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    this_END_7=(Token)match(input,RULE_END,FOLLOW_RULE_END_in_ruleRecurse329); 
+            	    this_END_4=(Token)match(input,RULE_END,FOLLOW_RULE_END_in_ruleRecurse291); 
             	     
-            	        newLeafNode(this_END_7, grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_4_2()); 
+            	        newLeafNode(this_END_4, grammarAccess.getRecurseAccess().getENDTerminalRuleCall_1_1_2()); 
             	        
 
             	    }
@@ -412,6 +367,9 @@ public class InternalDemoParser extends AbstractInternalAntlrParser {
                 appendSkippedTokens();
             } 
         finally {
+
+            	myHiddenTokenState.restore();
+
         }
         return current;
     }
@@ -425,14 +383,11 @@ public class InternalDemoParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleModel_in_entryRuleModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleModel85 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleRecurse_in_ruleModel130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRecurse_in_entryRuleRecurse165 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRecurse175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleRecurse227 = new BitSet(new long[]{0x00000000000001F2L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleRecurse249 = new BitSet(new long[]{0x00000000000001F2L});
-    public static final BitSet FOLLOW_RULE_SL_COMMENT_in_ruleRecurse265 = new BitSet(new long[]{0x00000000000001F2L});
-    public static final BitSet FOLLOW_RULE_LINECONTINUATION_in_ruleRecurse281 = new BitSet(new long[]{0x00000000000001F2L});
-    public static final BitSet FOLLOW_RULE_BEGIN_in_ruleRecurse298 = new BitSet(new long[]{0x00000000000001F0L});
-    public static final BitSet FOLLOW_ruleRecurse_in_ruleRecurse318 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_RULE_END_in_ruleRecurse329 = new BitSet(new long[]{0x00000000000001F2L});
+    public static final BitSet FOLLOW_ruleRecurse_in_entryRuleRecurse171 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRecurse181 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleRecurse237 = new BitSet(new long[]{0x0000000000000032L});
+    public static final BitSet FOLLOW_RULE_BEGIN_in_ruleRecurse260 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleRecurse_in_ruleRecurse280 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_END_in_ruleRecurse291 = new BitSet(new long[]{0x0000000000000032L});
 
 }

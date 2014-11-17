@@ -24,10 +24,11 @@ terminal STRING	:
 		; 
 
 /* phantom tokens:
- * TODO Should really use something other than '{' and '}' to avoid clash in Python
+ * use something other than '{' and '}' to avoid clash in Python so we use '{|' and '|}' 
+ * TODO Should really use something more obscure to avoid clash in any user language
  */
-terminal BEGIN : '{';
-terminal END : '}';
+terminal BEGIN : '{|';
+terminal END : '|}';
 
 /* if newline follows this then ignore indent changes */
 terminal LINECONTINUATION : '\\';

@@ -40,27 +40,24 @@ public class DemoGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
 		private final Assignment cNAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
 		private final RuleCall cNIDTerminalRuleCall_1_0_0 = (RuleCall)cNAssignment_1_0.eContents().get(0);
-		private final RuleCall cWSTerminalRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
-		private final RuleCall cSL_COMMENTTerminalRuleCall_1_2 = (RuleCall)cAlternatives_1.eContents().get(2);
-		private final RuleCall cLINECONTINUATIONTerminalRuleCall_1_3 = (RuleCall)cAlternatives_1.eContents().get(3);
-		private final Group cGroup_1_4 = (Group)cAlternatives_1.eContents().get(4);
-		private final RuleCall cBEGINTerminalRuleCall_1_4_0 = (RuleCall)cGroup_1_4.eContents().get(0);
-		private final Assignment cRAssignment_1_4_1 = (Assignment)cGroup_1_4.eContents().get(1);
-		private final RuleCall cRRecurseParserRuleCall_1_4_1_0 = (RuleCall)cRAssignment_1_4_1.eContents().get(0);
-		private final RuleCall cENDTerminalRuleCall_1_4_2 = (RuleCall)cGroup_1_4.eContents().get(2);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final RuleCall cBEGINTerminalRuleCall_1_1_0 = (RuleCall)cGroup_1_1.eContents().get(0);
+		private final Assignment cRAssignment_1_1_1 = (Assignment)cGroup_1_1.eContents().get(1);
+		private final RuleCall cRRecurseParserRuleCall_1_1_1_0 = (RuleCall)cRAssignment_1_1_1.eContents().get(0);
+		private final RuleCall cENDTerminalRuleCall_1_1_2 = (RuleCall)cGroup_1_1.eContents().get(2);
 		
 		///////////////////////////// end of temporary terminals /////////////////////////
-		//Recurse:
-		//	{Recurse} (n+=ID | WS | SL_COMMENT | LINECONTINUATION | BEGIN r+=Recurse END)+;
+		//Recurse hidden(WS, SL_COMMENT, LINECONTINUATION):
+		//	{Recurse} (n+=ID | BEGIN r+=Recurse END)+;
 		public ParserRule getRule() { return rule; }
 
-		//{Recurse} (n+=ID | WS | SL_COMMENT | LINECONTINUATION | BEGIN r+=Recurse END)+
+		//{Recurse} (n+=ID | BEGIN r+=Recurse END)+
 		public Group getGroup() { return cGroup; }
 
 		//{Recurse}
 		public Action getRecurseAction_0() { return cRecurseAction_0; }
 
-		//(n+=ID | WS | SL_COMMENT | LINECONTINUATION | BEGIN r+=Recurse END)+
+		//(n+=ID | BEGIN r+=Recurse END)+
 		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 
 		//n+=ID
@@ -69,29 +66,20 @@ public class DemoGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNIDTerminalRuleCall_1_0_0() { return cNIDTerminalRuleCall_1_0_0; }
 
-		//WS
-		public RuleCall getWSTerminalRuleCall_1_1() { return cWSTerminalRuleCall_1_1; }
-
-		//SL_COMMENT
-		public RuleCall getSL_COMMENTTerminalRuleCall_1_2() { return cSL_COMMENTTerminalRuleCall_1_2; }
-
-		//LINECONTINUATION
-		public RuleCall getLINECONTINUATIONTerminalRuleCall_1_3() { return cLINECONTINUATIONTerminalRuleCall_1_3; }
-
 		//BEGIN r+=Recurse END
-		public Group getGroup_1_4() { return cGroup_1_4; }
+		public Group getGroup_1_1() { return cGroup_1_1; }
 
 		//BEGIN
-		public RuleCall getBEGINTerminalRuleCall_1_4_0() { return cBEGINTerminalRuleCall_1_4_0; }
+		public RuleCall getBEGINTerminalRuleCall_1_1_0() { return cBEGINTerminalRuleCall_1_1_0; }
 
 		//r+=Recurse
-		public Assignment getRAssignment_1_4_1() { return cRAssignment_1_4_1; }
+		public Assignment getRAssignment_1_1_1() { return cRAssignment_1_1_1; }
 
 		//Recurse
-		public RuleCall getRRecurseParserRuleCall_1_4_1_0() { return cRRecurseParserRuleCall_1_4_1_0; }
+		public RuleCall getRRecurseParserRuleCall_1_1_1_0() { return cRRecurseParserRuleCall_1_1_1_0; }
 
 		//END
-		public RuleCall getENDTerminalRuleCall_1_4_2() { return cENDTerminalRuleCall_1_4_2; }
+		public RuleCall getENDTerminalRuleCall_1_1_2() { return cENDTerminalRuleCall_1_1_2; }
 	}
 	
 	
@@ -181,15 +169,16 @@ public class DemoGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	/// * phantom tokens:
-	// * TODO Should really use something other than '{' and '}' to avoid clash in Python
+	// * use something other than '{' and '}' to avoid clash in Python so we use '{|' and '|}' 
+	// * TODO Should really use something more obscure to avoid clash in any user language
 	// * / terminal BEGIN:
-	//	"{";
+	//	"{|";
 	public TerminalRule getBEGINRule() {
 		return tBEGIN;
 	} 
 
 	//terminal END:
-	//	"}";
+	//	"|}";
 	public TerminalRule getENDRule() {
 		return tEND;
 	} 
@@ -225,8 +214,8 @@ public class DemoGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	///////////////////////////// end of temporary terminals /////////////////////////
-	//Recurse:
-	//	{Recurse} (n+=ID | WS | SL_COMMENT | LINECONTINUATION | BEGIN r+=Recurse END)+;
+	//Recurse hidden(WS, SL_COMMENT, LINECONTINUATION):
+	//	{Recurse} (n+=ID | BEGIN r+=Recurse END)+;
 	public RecurseElements getRecurseAccess() {
 		return pRecurse;
 	}

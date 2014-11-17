@@ -4,6 +4,8 @@
 package com.euclideanspace.whitespaceblock.ui.labeling
 
 import com.google.inject.Inject
+import com.euclideanspace.whitespaceblock.demo.Model
+import com.euclideanspace.whitespaceblock.demo.Recurse
 
 /**
  * Provides labels for a EObjects.
@@ -17,13 +19,22 @@ class DemoLabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelPr
 		super(delegate);
 	}
 
-	// Labels and icons can be computed like this:
-	
-//	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
-//
-//	def image(Greeting ele) {
-//		'Greeting.gif'
-//	}
+ 	def String text(Model ele) {
+	  return "Model";
+	}
+
+	def String text(Recurse ele) {
+	  var String result = "Recurse";
+	  try {
+	  if (ele.n != null) {
+	  	for(String s:ele.n) {
+	  	  result = result +" "+s;
+	  	}
+	  }
+	  } catch(Exception e){
+	  	System.out.println("error "+e);
+	  }
+	  return result;
+	}
+
 }

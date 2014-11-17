@@ -12,15 +12,15 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalDemoLexer extends Lexer {
-    public static final int RULE_END=9;
-    public static final int RULE_BEGIN=8;
+    public static final int RULE_END=6;
+    public static final int RULE_BEGIN=5;
     public static final int RULE_ID=4;
-    public static final int RULE_WS=5;
-    public static final int RULE_STRING=11;
+    public static final int RULE_WS=11;
+    public static final int RULE_STRING=8;
     public static final int RULE_ANY_OTHER=12;
-    public static final int RULE_SL_COMMENT=6;
-    public static final int RULE_INT=10;
-    public static final int RULE_LINECONTINUATION=7;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int RULE_INT=7;
+    public static final int RULE_LINECONTINUATION=9;
     public static final int EOF=-1;
 
     // delegates
@@ -41,10 +41,10 @@ public class InternalDemoLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:192:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:192:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:187:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:187:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:192:11: ( '^' )?
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:187:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -53,7 +53,7 @@ public class InternalDemoLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:192:11: '^'
+                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:187:11: '^'
                     {
                     match('^'); 
 
@@ -71,7 +71,7 @@ public class InternalDemoLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:192:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:187:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -120,10 +120,10 @@ public class InternalDemoLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:194:10: ( ( '0' .. '9' )+ )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:194:12: ( '0' .. '9' )+
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:189:10: ( ( '0' .. '9' )+ )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:189:12: ( '0' .. '9' )+
             {
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:194:12: ( '0' .. '9' )+
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:189:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -137,7 +137,7 @@ public class InternalDemoLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:194:13: '0' .. '9'
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:189:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -169,10 +169,10 @@ public class InternalDemoLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -190,10 +190,10 @@ public class InternalDemoLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -209,7 +209,7 @@ public class InternalDemoLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:21: '\\\\' .
+                    	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -217,7 +217,7 @@ public class InternalDemoLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -242,10 +242,10 @@ public class InternalDemoLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -261,7 +261,7 @@ public class InternalDemoLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:54: '\\\\' .
+                    	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -269,7 +269,7 @@ public class InternalDemoLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:196:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:191:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -312,10 +312,11 @@ public class InternalDemoLexer extends Lexer {
         try {
             int _type = RULE_BEGIN;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:198:12: ( '{' )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:198:14: '{'
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:193:12: ( '{|' )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:193:14: '{|'
             {
-            match('{'); 
+            match("{|"); 
+
 
             }
 
@@ -332,10 +333,11 @@ public class InternalDemoLexer extends Lexer {
         try {
             int _type = RULE_END;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:200:10: ( '}' )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:200:12: '}'
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:195:10: ( '|}' )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:195:12: '|}'
             {
-            match('}'); 
+            match("|}"); 
+
 
             }
 
@@ -352,8 +354,8 @@ public class InternalDemoLexer extends Lexer {
         try {
             int _type = RULE_LINECONTINUATION;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:202:23: ( '\\\\' )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:202:25: '\\\\'
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:197:23: ( '\\\\' )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:197:25: '\\\\'
             {
             match('\\'); 
 
@@ -372,11 +374,11 @@ public class InternalDemoLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:204:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:204:19: '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:199:17: ( '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:199:19: '#' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match('#'); 
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:204:23: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:199:23: (~ ( ( '\\n' | '\\r' ) ) )*
             loop7:
             do {
                 int alt7=2;
@@ -389,7 +391,7 @@ public class InternalDemoLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:204:23: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:199:23: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -409,7 +411,7 @@ public class InternalDemoLexer extends Lexer {
                 }
             } while (true);
 
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:204:39: ( ( '\\r' )? '\\n' )?
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:199:39: ( ( '\\r' )? '\\n' )?
             int alt9=2;
             int LA9_0 = input.LA(1);
 
@@ -418,9 +420,9 @@ public class InternalDemoLexer extends Lexer {
             }
             switch (alt9) {
                 case 1 :
-                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:204:40: ( '\\r' )? '\\n'
+                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:199:40: ( '\\r' )? '\\n'
                     {
-                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:204:40: ( '\\r' )?
+                    // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:199:40: ( '\\r' )?
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
@@ -429,7 +431,7 @@ public class InternalDemoLexer extends Lexer {
                     }
                     switch (alt8) {
                         case 1 :
-                            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:204:40: '\\r'
+                            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:199:40: '\\r'
                             {
                             match('\r'); 
 
@@ -461,10 +463,10 @@ public class InternalDemoLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:206:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:206:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:201:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:201:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:206:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:201:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt10=0;
             loop10:
             do {
@@ -518,8 +520,8 @@ public class InternalDemoLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:208:16: ( . )
-            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:208:18: .
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:203:16: ( . )
+            // ../com.euclideanspace.whitespaceblock/src-gen/com/euclideanspace/whitespaceblock/parser/antlr/internal/InternalDemo.g:203:18: .
             {
             matchAny(); 
 
@@ -609,26 +611,26 @@ public class InternalDemoLexer extends Lexer {
 
     protected DFA11 dfa11 = new DFA11(this);
     static final String DFA11_eotS =
-        "\1\uffff\1\13\2\uffff\2\13\16\uffff";
+        "\1\uffff\1\13\2\uffff\4\13\14\uffff";
     static final String DFA11_eofS =
         "\24\uffff";
     static final String DFA11_minS =
-        "\1\0\1\101\2\uffff\2\0\16\uffff";
+        "\1\0\1\101\2\uffff\2\0\1\174\1\175\14\uffff";
     static final String DFA11_maxS =
-        "\1\uffff\1\172\2\uffff\2\uffff\16\uffff";
+        "\1\uffff\1\172\2\uffff\2\uffff\1\174\1\175\14\uffff";
     static final String DFA11_acceptS =
-        "\2\uffff\1\1\1\2\2\uffff\1\4\1\5\1\6\1\7\1\10\1\11\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10";
+        "\2\uffff\1\1\1\2\4\uffff\1\6\1\7\1\10\1\11\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10";
     static final String DFA11_specialS =
-        "\1\2\3\uffff\1\0\1\1\16\uffff}>";
+        "\1\0\3\uffff\1\1\1\2\16\uffff}>";
     static final String[] DFA11_transitionS = {
-            "\11\13\2\12\2\13\1\12\22\13\1\12\1\13\1\4\1\11\3\13\1\5\10\13\12\3\7\13\32\2\1\13\1\10\1\13\1\1\1\2\1\13\32\2\1\6\1\13\1\7\uff82\13",
+            "\11\13\2\12\2\13\1\12\22\13\1\12\1\13\1\4\1\11\3\13\1\5\10\13\12\3\7\13\32\2\1\13\1\10\1\13\1\1\1\2\1\13\32\2\1\6\1\7\uff83\13",
             "\32\14\4\uffff\1\14\1\uffff\32\14",
             "",
             "",
             "\0\16",
             "\0\16",
-            "",
-            "",
+            "\1\17",
+            "\1\20",
             "",
             "",
             "",
@@ -680,26 +682,6 @@ public class InternalDemoLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA11_4 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA11_4>='\u0000' && LA11_4<='\uFFFF')) ) {s = 14;}
-
-                        else s = 11;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
-                        int LA11_5 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA11_5>='\u0000' && LA11_5<='\uFFFF')) ) {s = 14;}
-
-                        else s = 11;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 2 : 
                         int LA11_0 = input.LA(1);
 
                         s = -1;
@@ -715,7 +697,7 @@ public class InternalDemoLexer extends Lexer {
 
                         else if ( (LA11_0=='{') ) {s = 6;}
 
-                        else if ( (LA11_0=='}') ) {s = 7;}
+                        else if ( (LA11_0=='|') ) {s = 7;}
 
                         else if ( (LA11_0=='\\') ) {s = 8;}
 
@@ -723,7 +705,27 @@ public class InternalDemoLexer extends Lexer {
 
                         else if ( ((LA11_0>='\t' && LA11_0<='\n')||LA11_0=='\r'||LA11_0==' ') ) {s = 10;}
 
-                        else if ( ((LA11_0>='\u0000' && LA11_0<='\b')||(LA11_0>='\u000B' && LA11_0<='\f')||(LA11_0>='\u000E' && LA11_0<='\u001F')||LA11_0=='!'||(LA11_0>='$' && LA11_0<='&')||(LA11_0>='(' && LA11_0<='/')||(LA11_0>=':' && LA11_0<='@')||LA11_0=='['||LA11_0==']'||LA11_0=='`'||LA11_0=='|'||(LA11_0>='~' && LA11_0<='\uFFFF')) ) {s = 11;}
+                        else if ( ((LA11_0>='\u0000' && LA11_0<='\b')||(LA11_0>='\u000B' && LA11_0<='\f')||(LA11_0>='\u000E' && LA11_0<='\u001F')||LA11_0=='!'||(LA11_0>='$' && LA11_0<='&')||(LA11_0>='(' && LA11_0<='/')||(LA11_0>=':' && LA11_0<='@')||LA11_0=='['||LA11_0==']'||LA11_0=='`'||(LA11_0>='}' && LA11_0<='\uFFFF')) ) {s = 11;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA11_4 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA11_4>='\u0000' && LA11_4<='\uFFFF')) ) {s = 14;}
+
+                        else s = 11;
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 2 : 
+                        int LA11_5 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA11_5>='\u0000' && LA11_5<='\uFFFF')) ) {s = 14;}
+
+                        else s = 11;
 
                         if ( s>=0 ) return s;
                         break;
